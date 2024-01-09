@@ -26,7 +26,7 @@ public class Libro {
         autor = autorLibro;
         titulo = tituloLibro;
         numeroPaginas = numeroDePaginasDelLibro;
-        numeroReferencia = "A1OB";
+        numeroReferencia = "";
     }
     
     public String getAutor(){
