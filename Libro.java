@@ -1,4 +1,3 @@
-
 /**
  * Una clase que representa objetos libro.
  * Esta clase podria formar parte de un
@@ -46,7 +45,12 @@ public class Libro {
     }
     
     public void setNuevoNumeroReferencia (String nuevaReferencia){
-        numeroReferencia = nuevaReferencia;
+        if (nuevaReferencia.length() >= 3){
+            numeroReferencia = nuevaReferencia;
+        }
+        else {
+            System.out.println("Error el numero de referencia necesita al menos 3 caracteres");
+        }
     }
     
     public String getDetalles(){
@@ -62,6 +66,6 @@ public class Libro {
     }
     
     public void imprimirDatosGenerales(){
-        System.out.println("Título: " + titulo +", "+ "Autor: " + autor +", "+ "Páginas: " + numeroPaginas +", "+ "Referencia " + numeroReferencia);
+        System.out.println("Título: " + titulo +", "+ "Autor: " + autor +", "+ "Páginas: " + numeroPaginas +", "+ "Referencia: " + numeroReferencia);
     }
 }
