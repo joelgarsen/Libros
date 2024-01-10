@@ -25,7 +25,7 @@ public class Libro {
         autor = autorLibro;
         titulo = tituloLibro;
         numeroPaginas = numeroDePaginasDelLibro;
-        numeroReferencia = "";
+        numeroReferencia ="";
     }
     
     public String getAutor(){
@@ -66,6 +66,7 @@ public class Libro {
     }
     
     public void imprimirDatosGenerales(){
-        System.out.println("Título: " + titulo +", "+ "Autor: " + autor +", "+ "Páginas: " + numeroPaginas +", "+ "Referencia: " + numeroReferencia);
+        String Referencia = (numeroReferencia.equals("")) ? "--" : numeroReferencia;
+        System.out.println("Título: " + titulo +", "+ "Autor: " + autor +", "+ "Páginas: " + numeroPaginas +", "+ "Referencia: " + Referencia);
     }
 }
