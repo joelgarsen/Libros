@@ -54,7 +54,8 @@ public class Libro {
     }
     
     public String getDetalles(){
-        return "Título: " + titulo +", "+ "Autor: " + autor +", "+ "Páginas: " + numeroPaginas +", "+ "Referencia: " + numeroReferencia;
+        String referencia = (numeroReferencia.equals("")) ? "--" : numeroReferencia;
+        return "Título: " + titulo +", "+ "Autor: " + autor +", "+ "Páginas: " + numeroPaginas +", "+ "Referencia: " + referencia;
     }
     
     public void imprimirDatosAutor(){
@@ -66,7 +67,7 @@ public class Libro {
     }
     
     public void imprimirDatosGenerales(){
-        String Referencia = (numeroReferencia.equals("")) ? "--" : numeroReferencia;
-        System.out.println("Título: " + titulo +", "+ "Autor: " + autor +", "+ "Páginas: " + numeroPaginas +", "+ "Referencia: " + Referencia);
+        String referencia = (numeroReferencia.equals("")) ? "--" : numeroReferencia;
+        System.out.println("Título: " + titulo +", "+ "Autor: " + autor +", "+ "Páginas: " + numeroPaginas +", "+ "Referencia: " + referencia);
     }
 }
