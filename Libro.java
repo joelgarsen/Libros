@@ -18,17 +18,23 @@ public class Libro {
     private String numeroReferencia;
     
     private int vecesPrestado;
-
+    
+    private boolean libroTexto;
     /**
      * Fija el autor y el titulo del libro a los dados como parametro
      */
-    public Libro(String autorLibro, String tituloLibro,int numeroDePaginasDelLibro)
+    public Libro(String autorLibro, String tituloLibro,int numeroDePaginasDelLibro,boolean esLibroTexto)
     {
         autor = autorLibro;
         titulo = tituloLibro;
         numeroPaginas = numeroDePaginasDelLibro;
         numeroReferencia ="";
         vecesPrestado = 0;
+        this.libroTexto = esLibroTexto;
+    }
+    
+    public boolean getEsLibroDeTexto() {
+        return libroTexto;
     }
     
     public int getVecesPrestado(){
@@ -66,7 +72,10 @@ public class Libro {
     
     public String getDetalles(){
         String referencia = (numeroReferencia.equals("")) ? "--" : numeroReferencia;
-        return "Título: " + titulo +", "+ "Autor: " + autor +", "+ "Páginas: " + numeroPaginas +", "+ "Referencia: " + referencia +", "+ "Prestamos: " + vecesPrestado;
+        
+        String texto = libroTexto ? "Es libro de texto" : "No es libro de texto";
+    
+        return "Título: " + titulo +", "+ "Autor: " + autor +", "+ "Páginas: " + numeroPaginas +", "+ "Referencia: " + referencia +", "+ "Prestamos: " + vecesPrestado + "|" + texto;
     }
     
     public void imprimirDatosAutor(){
@@ -79,6 +88,9 @@ public class Libro {
     
     public void imprimirDatosGenerales(){
         String referencia = (numeroReferencia.equals("")) ? "--" : numeroReferencia;
-        System.out.println("Título: " + titulo +", "+ "Autor: " + autor +", "+ "Páginas: " + numeroPaginas +", "+ "Referencia: " + referencia +", "+ "Prestamos: " + vecesPrestado);
+        
+        String texto = libroTexto ? "Es libro de texto" : "No es libro de texto";
+        
+        System.out.println("Título: " + titulo +", "+ "Autor: " + autor +", "+ "Páginas: " + numeroPaginas +", "+ "Referencia: " + referencia +", "+ "Prestamos: " + vecesPrestado + "|" + texto);
     }
 }
